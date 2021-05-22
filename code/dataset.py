@@ -17,12 +17,13 @@ class ShoeData(Dataset):
 
     def __getitem__(self,idx):
         imfile = self.files[idx]
-        impath = os.path.join(self.root,impath)
+        impath = os.path.join(self.root,imfile)
         img = Image.open(impath)
         img = np.array(img)
         inp = img[:,:256,:]
         out = img[:,256:,:]
-        return
+
+        return inp,out
 
 '''
 img = np.array(Image.open(r'C:\Users\Pooja\Documents\ML_projects\Sketch-to-Shoe\data\28_AB.jpg'))
