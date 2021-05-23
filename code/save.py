@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torchvision.utils import save_image
+from torchvision.utils import save_image
 
 
 def save_image(model,data,folder,i):

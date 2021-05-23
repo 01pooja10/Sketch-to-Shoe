@@ -45,12 +45,12 @@ class Discriminator(nn.Module):
         in_channels = features[0]
 
         for feature in features[1:]:
-            print('Each feature: ',feature)
+            #print('Each feature: ',feature)
             layers.append(DCNN(in_channels,feature,stride=1 if feature==512 else 2))
             #update in channel with each iteration
             in_channels = feature
         #final model
-        print('List of layers: ',layers)
+        #print('List of layers: ',layers)
 
         '''
         adding another conv2d layer to output only 1 channel as Discriminator produces
@@ -67,7 +67,7 @@ class Discriminator(nn.Module):
         x = self.initial_model(x)
         x = self.model(x)
         return x
-
+'''
 #test case - batches, channels, image size
 xt = torch.randn((1, 3, 256, 256))
 yt = torch.randn((1, 3, 256, 256))
@@ -75,7 +75,7 @@ yt = torch.randn((1, 3, 256, 256))
 mod = Discriminator(in_channels=3)
 output = mod(xt,yt)
 print(output.size())
-
+'''
 
 #Generator
 
@@ -160,48 +160,49 @@ class Generator(nn.Module):
         then send x through consequent downward layers
         finally push x through the bottleneck
         '''
-        print('Downward layer: ')
+
         x1 = self.d1(x)
-        print(x1.size())
+        #print(x1.size())
         x2 = self.d2(x1)
-        print(x2.size())
+        #print(x2.size())
         x3 = self.d3(x2)
-        print(x3.size())
+        #print(x3.size())
         x4 = self.d4(x3)
-        print(x4.size())
+        #print(x4.size())
         x5 = self.d5(x4)
-        print(x5.size())
+        #print(x5.size())
         x6 = self.d6(x5)
-        print(x6.size())
+        #print(x6.size())
         x7 = self.d7(x6)
-        print(x7.size())
+        #print(x7.size())
         x8 = self.bottleneck(x7)
         '''
         send x to 1st up layer, consecutive upward layers
         final up layer helps upsample to original size
         '''
-        print('Upward layer: ')
+
         y1 = self.u1(x8)
-        print(y1.size())
+        #print(y1.size())
         y2 = self.u2(torch.cat([y1,x7], dim=1))
-        print(y2.size())
+        #print(y2.size())
         y3 = self.u3(torch.cat([y2,x6], dim=1))
-        print(y3.size())
+        #print(y3.size())
         y4 = self.u4(torch.cat([y3,x5], dim=1))
-        print(y4.size())
+        #print(y4.size())
         y5 = self.u5(torch.cat([y4,x4], dim=1))
-        print(y5.size())
+        #print(y5.size())
         y6 = self.u6(torch.cat([y5,x3], dim=1))
-        print(y6.size())
+        #print(y6.size())
         y7 = self.u7(torch.cat([y6,x2], dim=1))
-        print(y7.size())
+        #print(y7.size())
         y8 = self.ufinal(torch.cat([y7,x1], dim=1))
         return y8
 
-
+'''
 #test case - batches, channels, image size
 xt = torch.randn((1, 3, 256, 256))
 
 mod = Generator(in_channels=3)
 output = mod(xt)
 print('Final size: ',output.size())
+'''
