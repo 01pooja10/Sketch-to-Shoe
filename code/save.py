@@ -3,7 +3,7 @@ import torch.nn as nn
 from torchvision.utils import save_image
 
 
-def save_image(model,data,folder,i):
+def save_samples(model,data,folder,i):
     '''
     model - generator model
     data - the data loader(val/test)

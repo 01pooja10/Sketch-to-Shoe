@@ -1,8 +1,9 @@
 import torch
+torch.cuda.empty_cache()
 import torchvision.transforms as transforms
 from model import Discriminator, Generator
 from dataset import ShoeData
-from save import save_image,save_model
+from save import save_samples,save_model
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
@@ -17,7 +18,7 @@ val_root = r'C:/Users/Pooja/Downloads/val'
 batch_size = 16
 epochs = 5
 l1_lambda = 100
-
+save_folder = r'C:\Users\Pooja\Documents\ML_projects\Sketch-to-Shoe\samples'
 
 def train(d,g,optd,optg,dscaler,gscaler):
 
@@ -71,7 +72,7 @@ def train(d,g,optd,optg,dscaler,gscaler):
         ])
         val_data = ShoeData(root_directory=val_root,transforms=transform_val)
         val_loader = DataLoader(val_data,batch_size=batch_size,shuffle=True)
-        save_image(g,val_loader,folder='sample',i=epoch)
+        save_samples(g,val_loader,save_folder,epoch)
     print('Disc Loss: ',str(dloss.item()), 'Gen Loss: ',str(gloss.item()))
 
 def main():
