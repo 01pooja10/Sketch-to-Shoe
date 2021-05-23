@@ -14,8 +14,8 @@ lr=0.001
 device = 'cuda'
 train_root = r'C:/Users/Pooja/Downloads/train'
 val_root = r'C:/Users/Pooja/Downloads/val'
-batch_size = 128
-epochs = 10
+batch_size = 16
+epochs = 5
 l1_lambda = 100
 
 
@@ -29,18 +29,17 @@ def train(d,g,optd,optg,dscaler,gscaler):
 
     train_data = ShoeData(root_directory = train_root,transforms = transforms_list)
 
-    train_loader = DataLoader(train_data,batch_size=16,shuffle=True)
+    train_loader = DataLoader(train_data,batch_size=batch_size,shuffle=True)
     bce_loss = nn.BCEWithLogitsLoss()
     l1_loss = nn.L1Loss()
 
     for epoch in range(epochs):
-        print('Epoch: ',str(epoch))
+
         for idx, (x,y) in enumerate(tqdm(train_loader)):
             x = x.to(device)
             y = y.to(device)
-            '''
-            training the discriminator
-            '''
+
+            #training the discriminator
             with autocast():
                 yfake = g(x)
                 dreal = d(x,y)
@@ -53,9 +52,7 @@ def train(d,g,optd,optg,dscaler,gscaler):
             dscaler.step(optd)
             dscaler.update()
 
-            '''
-            training the generator
-            '''
+            #training the generator
             with autocast():
                 dfake = d(x,yfake)
                 gfloss = bce_loss(dfake,torch.ones_like(dfake))
@@ -65,13 +62,15 @@ def train(d,g,optd,optg,dscaler,gscaler):
             gscaler.scale(gloss).backward()
             gscaler.step(optg)
             gscaler.update()
+        print('Epoch: ',str(epoch),'Disc Loss: ',str(dloss.item()), 'Gen Loss: ',str(gloss.item()))
 
+        #loading validation results as images into a separate folder
         transform_val = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.5,),(0.5,))
         ])
         val_data = ShoeData(root_directory=val_root,transforms=transform_val)
-        val_loader = DataLoader()
+        val_loader = DataLoader(val_data,batch_size=batch_size,shuffle=True)
         save_image(g,val_loader,folder='sample',i=epoch)
     print('Disc Loss: ',str(dloss.item()), 'Gen Loss: ',str(gloss.item()))
 
