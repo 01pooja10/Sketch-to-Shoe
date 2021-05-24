@@ -23,12 +23,12 @@ def save_samples(model,data,folder,i):
         save_image(fake,folder+'/fake_'+str(i)+'.png')
     model.train()
 
-def save_model(model,optim):
+def save_model(model,optim,path):
     '''
     model - generator or discriminator
     optim - optimizer's current state
-    filename - name - default: my_model.pth
+    filename - name - default: saved_model.pth
     '''
     print('Saving your model....')
     model_details = {'model':model.state_dict(),'optimizer':optim.state_dict()}
-    torch.save(model_details,'my_model.pth')
+    torch.save(model_details,path+'/saved_model.pth')

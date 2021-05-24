@@ -3,7 +3,7 @@ import PIL
 from PIL import Image
 import numpy as np
 import torch.nn as nn
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset
 
 class ShoeData(Dataset):
     def __init__(self,root_directory,transforms):
@@ -11,6 +11,7 @@ class ShoeData(Dataset):
         self.root = root_directory
         self.files = os.listdir(root_directory)
         self.transform_img = transforms
+
     def __len__(self):
         return len(self.files)
 
