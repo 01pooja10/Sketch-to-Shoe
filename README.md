@@ -7,14 +7,14 @@ The dataset, called Edges2Shoes has been obtained from [here](https://www.kaggle
 
 __Paper Citation:__
 
-'''
+```
 @inproceedings{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,
  title = {Image-to-Image Translation with Conditional Adversarial Networks},
  authors = {Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros},
  booktitle = {Proceedings of International Conference on Computer Vision (ICCV)},
  month = {November},
  year = {2018}
-'''
+```
 
 ## Intuition behind pix2pix
 The pix2pix GAN is used for image to image translation and project Sketch-to-Shoe makes use of the same to visualize realistic images of shoes from their respective edge maps(i.e. sketches)
