@@ -1,7 +1,7 @@
 # Sketch-to-Shoe
 Project Sketch-to-Shoe is a thorough yet comprehensible reimplementation of the pix2pix GAN paper (written by Isola et al.) which can be found [here](https://arxiv.org/pdf/1611.07004.pdf). It adheres to the PyTorch framework and is trained on various sketches/images of shoes.
 
-![paper](data/paper.jpg)
+![paper](assets/paper.jpg)
 
 The dataset, called Edges2Shoes has been obtained from [here](https://www.kaggle.com/balraj98/edges2shoes-dataset) and has been boiled down to contain a total of 2,392 training images along with 200 validation images. To sum it all up, project sketch-to-shoe transforms outlines/sketches of any given footwear design to a realistic copy of the same.
 
@@ -37,6 +37,28 @@ The L1 loss has been incorporated with the Generator's objective as the generato
 - Various validation set images were passed through the generator in order to observe the progress of training loop.
 - The models' states (upon completion of training) have been stored inside the 'models' folder for easier access during inference.
 - The save.py file offers two functions that aid users in saving sample images and also their model's details.
+
+## Results
+__Final Loss Values:__
+Discriminator loss: 4.745188419974511e-08
+Generator loss: 8.940245628356934
+
+__Image Samples:__
+Samples of images generated 1/4th the time through training:
+
+![epoch5](samples/fake_4.png)
+
+Samples of images generated halfway through training:
+
+![epoch10](samples/fake_10.png)
+
+Samples of images generated 3/4th the time through training:
+
+![epoch15](samples/fake_14.png)
+
+Samples of images generated after entire training process is complete:
+
+![epoch20](samples/fake_19.png)
 
 ## References
 1. The original paper: https://arxiv.org/pdf/1611.07004.pdf
