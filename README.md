@@ -60,6 +60,8 @@ Samples of images generated after entire training process is complete:
 
 ![epoch20](samples/fake_19.png)
 
+Note: As can be seen, images generated aren't as close to reality as would be expected due to various computational limitations faced - Memory related issues prevented usage of larger datasets, GPU RAM related issues prevented training for more number of epochs, etc.
+
 ## References
 1. The original paper: https://arxiv.org/pdf/1611.07004.pdf
 2. The original and official paper implementation: https://github.com/phillipi/pix2pix
