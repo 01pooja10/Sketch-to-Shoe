@@ -5,17 +5,6 @@ Project Sketch-to-Shoe is a thorough yet comprehensible reimplementation of the 
 
 The dataset, called Edges2Shoes has been obtained from [here](https://www.kaggle.com/balraj98/edges2shoes-dataset) and has been boiled down to contain a total of 2,392 training images along with 200 validation images. To sum it all up, project sketch-to-shoe transforms outlines/sketches of any given footwear design to a realistic copy of the same.
 
-__Paper Citation:__
-
-```
-@inproceedings{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,
- title = {Image-to-Image Translation with Conditional Adversarial Networks},
- authors = {Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros},
- booktitle = {Proceedings of International Conference on Computer Vision (ICCV)},
- month = {November},
- year = {2018}
-```
-
 ## Intuition behind pix2pix
 The pix2pix GAN is used for image to image translation and project Sketch-to-Shoe makes use of the same to visualize realistic images of shoes from their respective edge maps(i.e. sketches)
 
