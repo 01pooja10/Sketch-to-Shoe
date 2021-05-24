@@ -1,9 +1,20 @@
 # Sketch-to-Shoe
-Project Sketch-to-Shoe is a thorough yet comprehensible reimplementation of the pix2pix GAN paper (written by Isola et al.) which can be found [here](https://arxiv.org/pdf/1611.07004.pdf). It adheres to the PyTorch framework and is trained on various sketches/images of shoes.
+Project Sketch-to-Shoe is a thorough yet comprehensible reimplementation of the pix2pix GAN paper (Isola et al.) which can be found [here](https://arxiv.org/pdf/1611.07004.pdf). It adheres to the PyTorch framework and is trained on various sketches/images of shoes.
 
 ![paper](assets/paper.jpg)
 
 The dataset, called Edges2Shoes has been obtained from [here](https://www.kaggle.com/balraj98/edges2shoes-dataset) and has been boiled down to contain a total of 2,392 training images along with 200 validation images. To sum it all up, project sketch-to-shoe transforms outlines/sketches of any given footwear design to a realistic copy of the same.
+
+__Paper Citation:__
+
+'''
+@inproceedings{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,
+ title = {Image-to-Image Translation with Conditional Adversarial Networks},
+ authors = {Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros},
+ booktitle = {Proceedings of International Conference on Computer Vision (ICCV)},
+ month = {November},
+ year = {2018}
+'''
 
 ## Intuition behind pix2pix
 The pix2pix GAN is used for image to image translation and project Sketch-to-Shoe makes use of the same to visualize realistic images of shoes from their respective edge maps(i.e. sketches)
@@ -71,3 +82,27 @@ Note: As can be seen, images generated aren't as close to reality as would be ex
     - https://www.youtube.com/watch?v=SuddDSqGRzg
     - https://affinelayer.com/pixsrv/
     - https://www.youtube.com/watch?v=u7kQ5lNfUfg
+
+## Contributor
+
+<td width:25%>
+
+Pooja Ravi
+
+<p align="center">
+<img src = "https://avatars3.githubusercontent.com/u/66198904?s=460&u=06bd3edde2858507e8c42569d76d61b3491243ad&v=4"  height="120" alt="Pooja Ravi">
+</p>
+<p align="center">
+<a href = "https://github.com/01pooja10"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/pooja-ravi-9b88861b2/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+
+## License
+MIT © Pooja Ravi
+
+This project is licensed under the MIT License - see the [License](LICENSE) file for details
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
