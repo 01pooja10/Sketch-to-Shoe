@@ -66,8 +66,8 @@ Note: As can be seen, images generated aren't as close to reality as would be ex
 1. The original paper: https://arxiv.org/pdf/1611.07004.pdf
 2. The original and official paper implementation: https://github.com/phillipi/pix2pix
 3. Helpful tutorials and blogs:
-- https://www.youtube.com/watch?v=9SGs4Nm0VR4
-- https://machinelearningmastery.com/a-gentle-introduction-to-pix2pix-generative-adversarial-network/
-- https://www.youtube.com/watch?v=SuddDSqGRzg
-- https://affinelayer.com/pixsrv/
-- https://www.youtube.com/watch?v=u7kQ5lNfUfg
+    - https://www.youtube.com/watch?v=9SGs4Nm0VR4
+    - https://machinelearningmastery.com/a-gentle-introduction-to-pix2pix-generative-adversarial-network/
+    - https://www.youtube.com/watch?v=SuddDSqGRzg
+    - https://affinelayer.com/pixsrv/
+    - https://www.youtube.com/watch?v=u7kQ5lNfUfg
