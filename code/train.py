@@ -16,13 +16,14 @@ from torch.cuda.amp import autocast,GradScaler
 def train(d,g,optd,optg,dscaler,gscaler):
 
     transforms_list = transforms.Compose([
+                transforms.ColorJitter(brightness=0.2,saturation=0.4),
                 transforms.ToTensor(),
                 transforms.Normalize((0.5,),(0.5,))
                 ])
 
     train_data = ShoeData(root_directory=config.train_root, transforms=transforms_list)
 
-    train_loader = DataLoader(train_data,batch_size=config.batch_size,shuffle=True)
+    train_loader = DataLoader(train_data, batch_size=config.batch_size, shuffle=True)
     bce_loss = nn.BCEWithLogitsLoss()
     l1_loss = nn.L1Loss()
 
@@ -58,12 +59,11 @@ def train(d,g,optd,optg,dscaler,gscaler):
         print('Epoch: ',str(epoch),'Disc Loss: ',str(dloss.item()), 'Gen Loss: ',str(gloss.item()))
 
         #loading validation results as images into a separate folder
-        transform_val = transforms.Compose([
-        transforms.ToTensor(),
+        transform_val = transforms.Compose([transforms.ToTensor(),
         transforms.Normalize((0.5,),(0.5,))
         ])
         val_data = ShoeData(root_directory=config.val_root,transforms=transform_val)
-        val_loader = DataLoader(val_data,batch_size=config.batch_size,shuffle=True)
+        val_loader = DataLoader(val_data,batch_size=config.batch_size,shuffle=False)
         save_samples(g,val_loader,config.save_folder,epoch)
     print('Discriminator Loss: ',str(dloss.item()), 'Generator Loss: ',str(gloss.item()))
 

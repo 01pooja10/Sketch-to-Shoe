@@ -12,8 +12,7 @@ def save_samples(model,data,folder,i):
     '''
     print('Generating samples...')
     device = 'cuda'
-    x,y = next(iter(data))
-    x = x.to(device)
+    _,y = next(iter(data))
     y = y.to(device)
     model.eval()
     with torch.no_grad():
