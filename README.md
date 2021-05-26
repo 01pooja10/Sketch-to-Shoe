@@ -58,7 +58,7 @@ Samples of images generated 20th epoch through training:
 
 Samples of images generated after entire training process is complete:
 
-![epoch25](samples/fake_2.png)
+![epoch25](samples/final.png)
 
 Note: As can be seen, images generated aren't as close to reality as would be expected due to various computational limitations faced - Memory related issues prevented usage of larger datasets, GPU RAM related issues prevented training for more number of epochs, etc.
 
