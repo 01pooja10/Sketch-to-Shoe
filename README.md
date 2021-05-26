@@ -50,15 +50,15 @@ Samples of images generated 5th epoch through training:
 
 Samples of images generated halfway through training:
 
-![epoch10](samples/fake_13.png)
+![epoch13](samples/fake_13.png)
 
-Samples of images generated 18th epoch through training:
+Samples of images generated 20th epoch through training:
 
-![epoch15](samples/fake_19.png)
+![epoch20](samples/fake_19.png)
 
 Samples of images generated after entire training process is complete:
 
-![epoch20](samples/fake_24.png)
+![epoch25](samples/fake_24.png)
 
 Note: As can be seen, images generated aren't as close to reality as would be expected due to various computational limitations faced - Memory related issues prevented usage of larger datasets, GPU RAM related issues prevented training for more number of epochs, etc.
 
