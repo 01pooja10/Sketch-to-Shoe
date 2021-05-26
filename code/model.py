@@ -198,11 +198,10 @@ class Generator(nn.Module):
         y8 = self.ufinal(torch.cat([y7,x1], dim=1))
         return y8
 
-'''
+
 #test case - batches, channels, image size
 xt = torch.randn((1, 3, 256, 256))
 
 mod = Generator(in_channels=3)
 output = mod(xt)
 print('Final size: ',output.size())
-'''

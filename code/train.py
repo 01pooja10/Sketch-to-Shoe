@@ -16,7 +16,7 @@ from torch.cuda.amp import autocast,GradScaler
 def train(d,g,optd,optg,dscaler,gscaler):
 
     transforms_list = transforms.Compose([
-                transforms.ColorJitter(brightness=0.2,saturation=0.4),
+                transforms.ColorJitter(brightness=0.2,saturation=0.3),
                 transforms.ToTensor(),
                 transforms.Normalize((0.5,),(0.5,))
                 ])

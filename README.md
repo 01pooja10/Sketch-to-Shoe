@@ -44,21 +44,21 @@ Discriminator loss: 4.745188419974511e-08
 Generator loss: 8.940245628356934
 
 __Image Samples:__
-Samples of images generated 1/4th the time through training:
+Samples of images generated 5th epoch through training:
 
 ![epoch5](samples/fake_4.png)
 
 Samples of images generated halfway through training:
 
-![epoch10](samples/fake_10.png)
+![epoch10](samples/fake_13.png)
 
-Samples of images generated 3/4th the time through training:
+Samples of images generated 18th epoch through training:
 
-![epoch15](samples/fake_14.png)
+![epoch15](samples/fake_19.png)
 
 Samples of images generated after entire training process is complete:
 
-![epoch20](samples/fake_19.png)
+![epoch20](samples/fake_24.png)
 
 Note: As can be seen, images generated aren't as close to reality as would be expected due to various computational limitations faced - Memory related issues prevented usage of larger datasets, GPU RAM related issues prevented training for more number of epochs, etc.
 

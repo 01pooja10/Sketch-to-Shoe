@@ -1,1 +1,3 @@
-from code import model
+import model
+import train
+import config
