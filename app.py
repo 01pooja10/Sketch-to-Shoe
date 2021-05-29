@@ -30,7 +30,7 @@ img = img.unsqueeze(0)
 img = img.to(config.device)
 x = st.button('pix2pix')
 gen = Generator(in_channels=3).to(config.device)
-saved = torch.load(r'D:\pix2pix_models\gen_model.pth',map_location=config.device)
+saved = torch.load(r'D:\pix2pix_models\gmodel.pth',map_location=config.device)
 gen.load_state_dict(saved['model'])
 gen.eval()
 if x:
