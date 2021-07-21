@@ -14,6 +14,15 @@ from torch.cuda.amp import autocast,GradScaler
 
 
 def train(d,g,optd,optg,dscaler,gscaler):
+    '''
+    parameters for train function:
+    d - discriminator model
+    g - generator model
+    optd - discriminator optimizer
+    optg - generator optimizer
+    dscaler - gradient scaler for discriminator
+    gscaler - gradient scaler for generator
+    '''
 
     transforms_list = transforms.Compose([
                 transforms.ColorJitter(brightness=0.2,saturation=0.3),
