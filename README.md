@@ -72,6 +72,12 @@ Note: As can be seen, images generated aren't as close to reality as would be ex
     - https://affinelayer.com/pixsrv/
     - https://www.youtube.com/watch?v=u7kQ5lNfUfg
 
+## Potential web application
+Built a Streamlit based web application by integrating both generator and discriminator models for accepting an input sketch and generating the real-life version of the same but as observed, the app requires well trained models for generating accurate representations. The code for the application can be accessed under app.py file.
+
+Note: It requires an additional dependency called streamlit canvas for allowing users to sketch on their screens which is then fed as the input for the generator to produce a realistic image.
+
+
 ## Contributor
 
 <td width:25%>
