@@ -31,7 +31,7 @@ The L1 loss has been incorporated with the Generator's objective as the generato
 - The models have been built using 2 different architectures: A patchGAN for the discriminator and a UNET for the generator.
 - The patchGAN model accepts 2 inputs: sketch and image
 - The U-net accepts only the images.
-- The model has been trained for 25 whole epochs (using a GPU) on a batch size of 16.
+- The model has been trained for 25 whole epochs (using a GPU) on batches of size 16.
 - Mixed precision training was observed to be faster and left a less costly memory footprint. It used the Automatic Mixed Precision training available as [torch.cuda.amp](https://pytorch.org/docs/stable/amp.html) and this employed FP16 precision during the training process.
 - Various necessary(editable) hyperparameters have been stored in the config.py file in order to better organize the training code
 - Various validation set images were passed through the generator in order to observe the progress of training loop.
